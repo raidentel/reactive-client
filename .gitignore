@@ -1,0 +1,12 @@
+# ignore all idea file
+/.idea/
+/.gradle/
+
+# ignore all .iml file
+*.iml
+
+# ignore all target
+*/target/
+
+# ignore current target
+*/build/*

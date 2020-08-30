@@ -20,7 +20,7 @@ repositories {
     }
 }
 
-mainClassName = 'org.gluonhq.reactive.RxGluonApp'
+mainClassName = 'net.fidoteam.reactive.MainApp'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
