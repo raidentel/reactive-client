@@ -1,7 +1,7 @@
 
-Y
-java:S1612$"<Replace this lambda with method reference 'Objects::isNull'.(Óùíæ8…ûœŞÃ.
 E
 java:S1068"(Remove this unused "view" private field.(¬µÑ´8…ûœŞÃ.
+Y
+java:S1612$"<Replace this lambda with method reference 'Objects::isNull'.(Óùíæ8…ûœŞÃ.
 h
 java:S32524"KUse static access with "javafx.scene.input.MouseEvent" for "MOUSE_DRAGGED".(ÑÉŒ 8…ûœŞÃ.

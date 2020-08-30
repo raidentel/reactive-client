@@ -37,3 +37,9 @@ l
 <src/main/java/org/gluonhq/reactive/ui/shape/CircleShape.java,a\8\a86d58afdb580ecb0e4d12fbaf6c9ad2016fd6fd
 q
 Asrc/main/java/org/gluonhq/reactive/controller/MainController.java,e\7\e7a314af39821d8f521b96f5bf12ae492c1ad950
+X
+(src/main/resources/styles/bootstrap3.css,7\0\70983157c870adf429bceadf321fc7c97d0db8a5
+T
+$src/main/resources/styles/charts.css,a\1\a1764dbb2dde451b96ccca2cf8ff48ec6a12f7bc
+T
+$src/main/resources/styles/styles.css,c\0\c0f94ea59cfe496c556d890ceed2dd5f800081e7
