@@ -8,18 +8,26 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.gluonhq.reactive.controller.MainController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = {"org.gluonhq.reactive", "org.gluonhq.reactive.core"})
+@ComponentScan(
+        basePackages = {"org.gluonhq.reactive", "org.gluonhq.reactive.core"},
+        basePackageClasses = {org.gluonhq.reactive.BasicView.class})
+@EnableAutoConfiguration
 @SpringBootApplication
 @EnableFeignClients
 public class RxGluonApp extends MobileApplication {
 
     private ConfigurableApplicationContext context;
+
+    @Autowired
+    private MainController controller;
 
     public static void main(String[] args) {
         Application.launch(RxGluonApp.class, args);
@@ -29,9 +37,8 @@ public class RxGluonApp extends MobileApplication {
     @Override
     public void init() {
         context = SpringApplication.run(RxGluonApp.class);
-        final MainController controller = context.getBean(MainController.class);
-        controller.showView();
-        addViewFactory(HOME_VIEW, BasicView::new);
+        final BasicView basicView = context.getBean(BasicView.class);
+        addViewFactory(HOME_VIEW, basicView);
     }
 
     @Override

@@ -8,7 +8,6 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
@@ -21,7 +20,6 @@ import org.gluonhq.reactive.controller.MainController;
 import org.gluonhq.reactive.ui.shape.CircleShape;
 import org.gluonhq.reactive.ui.shape.RectShape;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 import java.util.Random;
@@ -87,7 +85,7 @@ public class BasicView extends View implements Supplier<View> {
         shape.setEffect(shadow);
     }
 
-    private void displayCats(ActionEvent event){
+    private void displayCats(ActionEvent event) {
         shapeCanvas.getChildren().add(new RectShape(this).getRootShape());
     }
 
