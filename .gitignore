@@ -1,15 +1,3 @@
-# ignore all idea file
-/.idea/*
-/.gradle/*
-/build/*
-
-# ignore all .iml file
-*.iml
-
-# ignore all target
-*/target/
-
-# ignore current target
-*/build/*
 /.gradle/
 /.idea/
+/build/
