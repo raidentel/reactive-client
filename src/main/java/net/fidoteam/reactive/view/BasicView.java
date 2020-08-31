@@ -1,5 +1,6 @@
 package net.fidoteam.reactive.view;
 
+import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
@@ -86,7 +87,7 @@ public class BasicView extends View implements Supplier<View> {
     }
 
     private void displayCats(ActionEvent event) {
-        shapeCanvas.getChildren().add(new RectShape(this).getRootShape());
+        MobileApplication.getInstance().switchView("SPLASH_VIEW");
     }
 
     private void addBox(ActionEvent event) {

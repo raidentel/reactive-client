@@ -7,28 +7,24 @@ import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import net.fidoteam.reactive.controller.MainController;
 import net.fidoteam.reactive.view.BasicView;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
+
 @ComponentScan(
         basePackages = {"net.fidoteam.reactive", "net.fidoteam.reactive.core"},
         basePackageClasses = {BasicView.class})
-@EnableAutoConfiguration
 @SpringBootApplication
 @EnableFeignClients
 public class MainApp extends MobileApplication {
 
     private ConfigurableApplicationContext context;
 
-    @Autowired
-    private MainController controller;
 
     public static void main(String[] args) {
         Application.launch(MainApp.class, args);
@@ -37,7 +33,8 @@ public class MainApp extends MobileApplication {
 
     @Override
     public void init() {
-        context = SpringApplication.run(MainApp.class);
+        String[] args = getParameters().getRaw().toArray(new String[0]);
+        this.context = new SpringApplicationBuilder().sources(MainApp.class).run(args);
         final BasicView basicView = context.getBean(BasicView.class);
         addViewFactory(HOME_VIEW, basicView);
     }
